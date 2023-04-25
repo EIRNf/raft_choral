@@ -1,0 +1,45 @@
+* About
+
+Modeling the Raft leader election protocol using Choral.
+
+* Building
+
+It should always be possible to build the project with the most recent version
+of Choral. To build the project:
+
+1. Make sure you have the Choral libraries installed (=org.choral-lang:choral=
+   and =org.choral-lang:runtime=).
+
+   Choral does not yet publish its libraries to any Maven repository, so for now
+   they have to be built from source.
+
+   Clone the [[https://github.com/choral-lang/choral][Choral repository]] and build and install the libraries:
+
+   #+BEGIN_EXAMPLE
+     mvn install
+   #+END_EXAMPLE
+
+2. Make sure you have the =choral= compiler script on your =PATH= and that
+   you've set =CHORAL_PATH=.
+
+   The script is just a wrapper that looks for the Choral standalone JAR under
+   =CHORAL_HOME= and invokes it. The version of the JAR should match the version
+   of the runtime you've installed.
+
+   When building Choral from source, You can find the JAR under Choral's
+   =dist/target=, which you can use as your =CHORAL_PATH=.
+
+3. Build the project:
+
+   #+BEGIN_EXAMPLE
+     mvn compile
+   #+END_EXAMPLE
+
+
+* Running
+
+Run the program:
+
+#+BEGIN_EXAMPLE
+  ./election
+#+END_EXAMPLE
